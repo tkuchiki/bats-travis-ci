@@ -1,4 +1,16 @@
-bats-travis-ci
+bats-travis-ci [![Build Status](https://travis-ci.org/tkuchiki/bats-travis-ci.svg?branch=master)](https://travis-ci.org/tkuchiki/bats-travis-ci)
 ==============
 
-Using Bats with Travis CI
+Using Bats with Travis CI 
+
+## .travis.yml
+
+~~~~
+language: bash
+before_install:
+  - sudo add-apt-repository ppa:duggan/bats --yes
+  - sudo apt-get update -qq
+  - sudo apt-get install -qq bats
+script:
+  - bats /path/to/bats
+~~~~
