@@ -7,6 +7,7 @@ Using Bats with Travis CI
 
 ### Container-based
 
+```yaml
 sudo: false
 language: bash
 addons:
@@ -17,8 +18,6 @@ addons:
     - bats
     - bc
 script: bats /path/to/bats
-```yaml
-
 ```
 
 ### Sudo-enabled VM
