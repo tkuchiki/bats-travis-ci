@@ -5,7 +5,25 @@ Using Bats with Travis CI
 
 ## .travis.yml
 
-~~~~
+### Container-based
+
+sudo: false
+language: bash
+addons:
+  apt:
+    sources:
+    - sourceline: 'ppa:duggan/bats'
+    packages:
+    - bats
+    - bc
+script: bats /path/to/bats
+```yaml
+
+```
+
+### Sudo-enabled VM
+
+```yaml
 language: bash
 before_install:
   - sudo add-apt-repository ppa:duggan/bats --yes
@@ -13,4 +31,4 @@ before_install:
   - sudo apt-get install -qq bats
 script:
   - bats /path/to/bats
-~~~~
+```
